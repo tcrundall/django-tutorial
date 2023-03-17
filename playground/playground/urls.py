@@ -20,7 +20,7 @@ from boards import views
 
 urlpatterns = [
     re_path('^$', views.home, name='home'),
-    # re_path('^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
+    re_path('^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
     path('admin/', admin.site.urls),
-    re_path('^(?P<username>[\w.@+-]+)/$', views.user, name='user'),
+    # re_path('^(?P<username>[\w.@+-]+)/$', views.user, name='user'),
 ]
