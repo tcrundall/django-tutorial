@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from boards import views
+import accounts.views as accounts_views
+import boards.views as boards_views
 
 urlpatterns = [
-    re_path('^$', views.home, name='home'),
-    re_path('^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
-    re_path('^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
+    re_path('^$', boards_views.home, name='home'),
+    re_path('^boards/(?P<pk>\d+)/$', boards_views.board_topics, name='board_topics'),
+    re_path('^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
     path('admin/', admin.site.urls),
-    # re_path('^(?P<username>[\w.@+-]+)/$', views.user, name='user'),
+    # re_path('^(?P<username>[\w.@+-]+)/$', boards_views.user, name='user'),
+
+    re_path('^login/$', accounts_views.login, name='login')
 ]
