@@ -6,4 +6,5 @@ https://simpleisbetterthancomplex.com/series/2017/09/11/a-complete-beginners-gui
 Completed steps:
 * Part 1
 * Part 2
+* Part 3
 
