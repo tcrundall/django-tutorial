@@ -9,8 +9,7 @@ def home(request):
 
 def board_topics(request, pk):
     board = get_object_or_404(Board, pk=pk)
-    topics = board.topics.all()
-    return render(request, 'topics.html', {'board': board, 'topics': topics})
+    return render(request, 'topics.html', {'board': board})
 
 def new_topic(request, pk):
     board = get_object_or_404(Board, pk=pk)
@@ -35,8 +34,7 @@ def new_topic(request, pk):
 
         return redirect('board_topics', pk=board.pk) # TODO: redirect to the created topic page
 
-    topics = board.topics.all()
-    return render(request, 'new_topic.html', {'board': board, 'topics': topics})
+    return render(request, 'new_topic.html', {'board': board})
 
 def user(request, username):
     return render(request, 'user.html', {'username': username})
