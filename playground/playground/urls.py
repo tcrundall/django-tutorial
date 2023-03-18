@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
+from django.views.generic import RedirectView
 
 import accounts.views as accounts_views
 import boards.views as boards_views
@@ -26,5 +27,5 @@ urlpatterns = [
     re_path('^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
     path('admin/', admin.site.urls),
     # re_path('^(?P<username>[\w.@+-]+)/$', boards_views.user, name='user'),
-
+    re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
