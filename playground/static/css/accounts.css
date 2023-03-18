@@ -1,0 +1,17 @@
+body {
+  background-image: url(../images/pink-flowers.webp);
+}
+
+.logo {
+  font-family: 'Comic Neue', cursive;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.loga a {
+  color: rgba(0,0,0,.9);
+}
+
+.loga a:hover,
+.logo a:active {
+  text-decoration: none;
+}
