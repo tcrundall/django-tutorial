@@ -21,10 +21,10 @@ import boards.views as boards_views
 
 urlpatterns = [
     re_path('^$', boards_views.home, name='home'),
+    re_path('^signup/$', accounts_views.signup, name='signup'),
     re_path('^boards/(?P<pk>\d+)/$', boards_views.board_topics, name='board_topics'),
     re_path('^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
     path('admin/', admin.site.urls),
     # re_path('^(?P<username>[\w.@+-]+)/$', boards_views.user, name='user'),
 
-    re_path('^login/$', accounts_views.login, name='login')
 ]
