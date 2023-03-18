@@ -24,6 +24,7 @@ import boards.views as boards_views
 urlpatterns = [
     re_path('^$', boards_views.home, name='home'),
     re_path('^signup/$', accounts_views.signup, name='signup'),
+    re_path('^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     re_path('^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     re_path('^boards/(?P<pk>\d+)/$', boards_views.board_topics, name='board_topics'),
     re_path('^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
