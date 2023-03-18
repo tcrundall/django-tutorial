@@ -10,4 +10,20 @@
 {% endblock %}
 
 {% block content %}
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>Topic</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for topic in topics %}
+          <tr>
+            <td>
+              {{ topic.subject }}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
 {% endblock %}
