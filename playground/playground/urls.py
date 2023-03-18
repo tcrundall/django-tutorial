@@ -71,6 +71,8 @@ urlpatterns = [
     # BOARDS
     re_path('^boards/(?P<pk>\d+)/$', boards_views.board_topics, name='board_topics'),
     re_path('^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
+    re_path('^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$', boards_views.topic_posts,
+    name='topic_posts'),
 
     # ADMIN
     path('admin/', admin.site.urls),

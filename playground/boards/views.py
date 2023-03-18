@@ -38,6 +38,11 @@ def new_topic(request, pk):
     return render(request, 'new_topic.html', {'board': board, 'form': form})
 
 
+def topic_posts(request, pk, topic_pk):
+    topic = get_object_or_404(Topic, board__pk=pk, pk=topic_pk)
+    return render(request, 'topic_posts.html', {'topic': topic})
+
+
 def user(request, username):
     return render(request, 'user.html', {'username': username})
 
