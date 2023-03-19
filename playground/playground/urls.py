@@ -62,7 +62,7 @@ urlpatterns = [
     ),
 
     # HOME
-    re_path('^$', boards_views.home, name='home'),
+    re_path('^$', boards_views.BoardListView.as_view(), name='home'),
 
     # USER
     re_path('^signup/$', accounts_views.signup, name='signup'),
