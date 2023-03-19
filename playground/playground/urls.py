@@ -21,6 +21,7 @@ from django.views.generic import RedirectView
 import accounts.views as accounts_views
 import boards.views as boards_views
 
+
 urlpatterns = [
     # PASSWORD RESETTING
     re_path(
@@ -77,7 +78,7 @@ urlpatterns = [
         name='topic_posts',
     ),
     re_path(
-        '^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/reply$',
+        '^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/reply/$',
         boards_views.reply_topic,
         name='reply_topic',
     ),
@@ -89,3 +90,4 @@ urlpatterns = [
     # CONFIGURATION
     re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
+
