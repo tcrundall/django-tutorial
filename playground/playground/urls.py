@@ -82,6 +82,11 @@ urlpatterns = [
         boards_views.reply_topic,
         name='reply_topic',
     ),
+    re_path(
+        '^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/posts/(?P<post_pk>\d+)/edit/$',
+        boards_views.PostUpdateView.as_view(),
+        name='edit_post',
+    ),
 
     # ADMIN
     path('admin/', admin.site.urls),
