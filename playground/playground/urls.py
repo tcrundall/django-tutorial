@@ -78,7 +78,7 @@ urlpatterns = [
     re_path('^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
     re_path(
         '^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$',
-        boards_views.topic_posts,
+        boards_views.PostListView.as_view(),
         name='topic_posts',
     ),
     re_path(
