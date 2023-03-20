@@ -70,7 +70,11 @@ urlpatterns = [
     re_path('^logout/$', auth_views.LogoutView.as_view(), name='logout'),
 
     # BOARDS
-    re_path('^boards/(?P<pk>\d+)/$', boards_views.board_topics, name='board_topics'),
+    re_path(
+        '^boards/(?P<pk>\d+)/$',
+        boards_views.TopicListView.as_view(),
+        name='board_topics',
+    ),
     re_path('^boards/(?P<pk>\d+)/new/$', boards_views.new_topic, name='new_topic'),
     re_path(
         '^boards/(?P<pk>\d+)/topics/(?P<topic_pk>\d+)/$',
