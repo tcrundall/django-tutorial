@@ -30,6 +30,7 @@
     {% csrf_token %}
     {% include 'includes/form.html' %}
     <button type="submit" class="btn btn-success">Post a reply</button>
+    <a href="{% url 'topic_posts' topic.board.pk topic.pk %}" class="btn btn-outline-secondary" role="button">Cancel</a>
   </form>
 
   {% for post in topic.posts.all %}

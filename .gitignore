@@ -3,3 +3,12 @@ __pycache__
 
 # Local data
 db.sqlite3
+
+# mac stuff
+.DS_Store
+
+# editor stuff
+.vscode
+
+# python stuff
+mypy.ini
