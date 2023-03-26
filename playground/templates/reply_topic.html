@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load static %}
+{% comment %} {% load static %} {% endcomment %}
 {% load widget_tweaks %}
 
 {% block title %}Post a reply{% endblock %}
@@ -14,7 +14,7 @@
   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
   {% comment %} <script src="{% static 'js/simplemde.min.js' %}"></script> {% endcomment %}
   <script>
-    {% comment %} var simplemde = new SimpleMDE(); {% endcomment %}
+    var simplemde = new SimpleMDE();
   </script>
 {% endblock %}
 
@@ -26,7 +26,7 @@
 {% endblock %}
 
 {% block content %}
-  <form method="post" class="mb-4">
+  <form method="post" class="mb-4" novalidate>
     {% csrf_token %}
     {% include 'includes/form.html' %}
     <button type="submit" class="btn btn-success">Post a reply</button>
