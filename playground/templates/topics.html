@@ -17,6 +17,8 @@
       <a href="{% url 'new_topic' board.pk %}" class="btn btn-primary">New topic</a>
     </div>
 
+    {% include 'includes/pagination.html' %}
+
     <table class="table table-striped mb-4">
       <thead class="thead-dark">
         <tr>
