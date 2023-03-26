@@ -105,5 +105,4 @@ class InvalidReplyTopicTests(ReplyTopicTestCase):
 
     def test_form_errors(self):
         form = self.response.context.get('form')
-        self.assertTrue(form.errors)
-
+        self.assertTrue(form.errors)  # type: ignore
