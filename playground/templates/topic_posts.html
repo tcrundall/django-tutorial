@@ -16,7 +16,11 @@
     <a href='{% url 'reply_topic' topic.board.pk topic.pk %}' class="btn btn-primary" role="button">Reply</a>
   </div>
 
-  {% include 'includes/pagination.html' %}
+  {% if is_paginated %}
+    {% if page_obj.object_list.count > 5 %}
+      {% include 'includes/pagination.html' %}
+    {% endif %}
+  {% endif %}
 
   {% for post in posts %}
 

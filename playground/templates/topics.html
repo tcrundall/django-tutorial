@@ -17,7 +17,11 @@
       <a href="{% url 'new_topic' board.pk %}" class="btn btn-primary">New topic</a>
     </div>
 
-    {% include 'includes/pagination.html' %}
+    {% if is_paginated %}
+      {% if page_obj.object_list.count > 5 %}
+        {% include 'includes/pagination.html' %}
+      {% endif %}
+    {% endif %}
 
     <table class="table table-striped mb-4">
       <thead class="thead-dark">
